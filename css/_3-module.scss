@@ -1,0 +1,116 @@
+
+/* 
+
+*** btn
+*** 
+*** 
+*** 
+*** 
+
+*/
+
+
+
+
+/*==================================================
+
+*** btn
+==================================================*/
+
+.btn{
+    margin-top: 40px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 34px;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.btn > a{
+    display: inline-block;
+    padding: 18px 78px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    background: $key;
+}
+
+.btn-w > a{
+    display: inline-block;
+    padding: 18px 60px;
+    color: $key;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    border: 2px solid $key;
+    background: transparent;
+}
+
+.btn-g > a{
+    display: inline-block;
+    padding: 18px 78px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    background: $gray;
+
+    @include tab-l{ /* < 1024px */
+        padding: 18px 60px;
+    }
+}
+
+.btn:hover{
+    
+}
+
+
+
+/*==================================================
+
+*** flex-wrapper
+==================================================*/
+
+.flex-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-content{
+    width: 31%;
+}
+
+.flex-content__img{
+
+}
+
+.flex-content__img > img{
+    width: 100%;
+}
+
+
+
+/*==================================================
+
+*** 
+==================================================*/
+
+
+
+
+
+/*==================================================
+
+*** 
+==================================================*/
+
+
+
+
+
+/*==================================================
+
+*** 
+==================================================*/

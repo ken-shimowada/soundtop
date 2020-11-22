@@ -1,0 +1,247 @@
+footer{
+    margin-top: 140px;
+}
+
+
+// footer__contact
+
+.footer__contact{
+    display:  flex;
+    justify-content: space-between;
+}
+
+.footer__contact__link{
+    padding: 42px 135px;
+    width: calc(100% - 130px);
+    color: #ffffff;
+    background: $key;
+
+    @include pc{ /* < 1366px */
+        padding: 42px 11%;
+    }
+    @include tab-l{ /* < 1024px */
+        padding: 42px 8%;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.footer__contact__inner{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 964px;
+}
+
+.footer__contact__inner > span{
+    padding-right: 100px;
+    font-size: 40px;
+    background: url(../img/arrow-contact.svg) no-repeat right center / 50px 7px;
+}
+
+.footer__contact__text{
+    font-size: 1.4rem;
+}
+
+.page-top{
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    width: 130px;
+    background: $category-2;
+}
+
+.page-top > img{
+
+}
+
+.page-top > span{
+
+}
+
+
+// .footer
+
+.footer{
+    padding: 80px 64px 40px;
+    color: #fff;
+    background: #000;
+
+    @include tab-l{ /* < 1024px */
+        padding: 60px 50px 40px;
+    }
+    @include tab-s{ /* < 768px */
+        padding: 50px 30px 30px;
+    }
+    // @include sp{ /* < 480px */
+    // }
+
+}
+
+// .footer__top
+
+.footer__top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+
+    @include tab-l{ /* < 1024px */
+        padding-bottom: 60px;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        display: block;
+        margin-left: 10%;
+        padding-bottom: 50px;
+    }
+}
+
+.footer__info{
+
+}
+
+.footer__logo{
+    @include tab-l{ /* < 1024px */
+        width: 190px;
+    }
+}
+
+.footer__logo > img{
+    width: 100%;
+}
+
+.footer__info > address{
+    margin-top: 35px;
+    font-size: 1.4rem;
+}
+
+.footer__nav{
+    display: flex;
+    justify-content: space-between;
+
+    @include tab-s{ /* < 768px */
+        flex-direction: column;
+        display: inline-block;
+        height: 220px;
+    }
+    @include sp{ /* < 480px */  
+        margin-top: 30px;
+        height: auto;
+    }
+}
+
+.footer__nav__list{
+    display: flex;
+    margin-right: 100px;
+    // height: 60px;
+    font-size: 1.4rem;
+
+    // @include pc{ /* < 1366px */
+    // }
+    @include tab-l{ /* < 1024px */
+        margin-right: 60px;
+    }
+    @include tab-s{ /* < 768px */
+        margin-right: 0;
+        // margin-left: auto;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.footer__nav__list-1{
+    margin-right: 60px;
+
+    @include tab-l{ /* < 1024px */
+        margin-right: 40px;
+    }
+    @include sp{ /* < 480px */
+        margin-right: 78px;
+    }
+}
+
+.footer__nav__list-2{
+
+}
+
+.footer__nav__item{
+    
+}
+
+.footer__nav__item:not(:last-of-type){
+    margin-bottom: 22px;
+}
+
+.footer__nav__item > a{
+
+}
+
+.footer__btn{
+    @include tab-s{ /* < 768px */
+        margin-top: 30px;
+    }
+    @include sp{ /* < 480px */
+        display: none;
+    }
+}
+
+
+// footer__bottom
+
+.footer__bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    @include tab-s{ /* < 768px */
+        display: block;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.footer__bottom__left{
+}
+
+.footer__bottom__left > a{
+    font-size: 1.3rem;
+}
+
+.footer__bottom__left > a:not(:last-of-type){
+    margin-right: 30px;
+}
+
+.footer__bottom__right{
+    display: flex;
+    @include tab-s{ /* < 768px */
+        justify-content: space-between;
+        margin-top: 15px;
+        width: 100%;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.footer__bottom__right > small{
+    margin-right: 40px;
+    font-size: 1.3rem;
+}
+
+.footer__sns__wrapper{
+    display: flex;
+}
+
+.footer__sns{
+
+}
+
+.footer__facebook{
+    display: inline-block;
+    margin-right: 20px;
+}

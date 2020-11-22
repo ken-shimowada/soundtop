@@ -1,0 +1,153 @@
+// ****** mv
+
+.mv{
+    width: 100%;
+    height: 700px;
+    background: url(../img/mv.jpg) no-repeat 100% / cover;
+}
+
+.mv__inner{
+    padding: 240px 0 0 100px;
+
+    @include tab-l{ /* < 1024px */
+        // padding: 240px 0 0 100px;    
+    }
+    @include tab-s{ /* < 768px */
+        // padding: 240px 0 0 100px;
+    }
+    @include sp{ /* < 480px */
+        // padding: 240px 0 0 100px;
+    }
+}
+
+.mv__inner__text{
+    margin-top: 2rem;
+    font-family: serif;
+    font-size: 3.2rem;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+
+// ****** gnav
+
+.gnav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 74px;
+    background: #111111;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.gnav__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+    width: 820px;
+
+    @include pc{ /* < 1366px */
+        width: 60%;
+        min-width: 680px;
+    }
+    @include tab-l{ /* < 1024px */
+        display: inline-block;
+        min-width: 0;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.gnav__logo{
+    margin-right: 40px;
+
+    @include pc{ /* < 1366px */
+        width: 210px;
+    }
+    @include tab-l{ /* < 1024px */
+        margin-right: 0;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.gnav__logo > img{
+    width: 100%;
+}
+
+.gnav__nav__inner{
+    width: 65%;
+
+    @include tab-l{ /* < 1024px */
+        display: none;
+    }
+}
+
+.gnav__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gnav__list__item{
+
+}
+
+.gnav__list__item:not(:last-of-type){
+    // margin-right: 30px;
+}
+
+.gnav__list__item > a{
+
+}
+
+
+// ****** gnav__btns
+
+.gnav__btns{
+    display: flex;
+}
+
+.btn__resruit > a,
+.btn__contact > a{
+    position: relative;
+    display: inline-block;
+    padding: 0 18px 0 35px;
+    line-height: 74px;
+}
+
+.btn__resruit > a{
+    background: $gray;
+}
+
+.btn__resruit > a:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 18px;
+    background: url(../img/icn_recruit.svg) no-repeat center center/13px 14px;
+    width: 13px;
+    height: 14px;
+
+}
+
+.btn__contact > a{
+    background: $key;
+}
+
+.btn__contact > a:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 29px;
+    left: 15px;
+    background: url(../img/icn_contact.svg) no-repeat center center/16px 18px;
+    width: 16px;
+    height: 18px;
+}
