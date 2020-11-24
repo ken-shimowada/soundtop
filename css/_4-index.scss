@@ -1,7 +1,7 @@
 /* 
 
 *** mv
-*** top-bg
+*** bg-black
 *** advantage
 *** service
 *** case
@@ -54,30 +54,48 @@
 
 /*==================================================
 
-*** top-bg
+*** bg-black
 ==================================================*/
 
-.top-bg:before{
+.bg-black{
+    width: 100%;
+}
+
+#top .bg-black:before{
     content: "";
     display: block;
     position: absolute;
     top: 0;
-    width: 300px;
-    height: 2420px;
+    width: 22%;
+    height: 83%;
     background: #121212;
-    z-index: -1;
+    z-index: 1;
+
+    @include tab-s{ /* < 768px */
+        height: 79%;
+    }
+    @include sp{ /* < 480px */
+        height: 74%;
+    }
 }
 
-.top-bg:after{
+#top .bg-black:after{
     content: "";
     display: block;
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 300px;
-    height: 450px;
+    width: 22%;
+    height: 16%;
     background: #121212;
-    z-index: -1;
+    z-index: 1;
+
+    @include tab-s{ /* < 768px */
+        height: 20.5%;
+    }
+    @include sp{ /* < 480px */
+        height: 25%;
+    }
 }
 
 
@@ -99,9 +117,25 @@
     position: absolute;
     top: 0;
     right: 0;
-    background: url(../img/top-intro.jpg);
+    background: url(../img/top-intro.jpg) no-repeat center center;
     width: 62%;
     height: 655px;
+
+    @include tab-l{ /* < 1024px */
+        top: 100px;
+        width: 45%;
+        height: 730px;
+    }
+    @include tab-s{ /* < 768px */
+        top: 675px;
+        width: 85%;
+        height: 300px;
+        background-position: center bottom;
+        z-index: 2;
+    }
+    @include sp{ /* < 480px */
+        top: 95%;
+    }
 }
 
 .advantage__box{
@@ -113,11 +147,34 @@
     width: 50%;
     min-width: 600px;
     background: rgba(255,255,255,0.9);
-    z-index: 2;
+    z-index: 3;
+
+    @include tab-l{ /* < 1024px */
+        padding: 80px 0;
+        width: 68%;
+        max-width: 600px;
+        min-width: auto;
+    }
+    @include tab-s{ /* < 768px */
+        padding: 70px 0;
+        max-width: 522px;
+        width: 90%;
+    }
+    @include sp{ /* < 480px */
+        padding: 60px 0;
+    }
 }
 
 .advantage__box__inner{
+    width: 455px;
 
+    @include tab-l{ /* < 1024px */
+        width: 76%;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .advantage__h2{
@@ -127,19 +184,41 @@
 .advantage__h3{
     margin-top: 30px;
     font-weight: bold;
+
+    @include tab-l{ /* < 1024px */
+        margin-top: 25px;
+    }
+    @include tab-s{ /* < 768px */
+        margin-top: 20px;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .advantage__text{
     margin-top: 20px;
-    width: 450px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 15px;
+    }
 }
 
 .advantage__btn{
     margin-top: 50px;
+
+    @include tab-l{ /* < 1024px */
+        margin-top: 40px;
+    }
+    @include tab-s{ /* < 768px */
+        margin-top: 35px;
+    }
 }
 
 .advantage__btn > a{
-
+    @include sp{ /* < 480px */
+        width: 100%;
+        max-width: 251px;
+    }
 }
 
 
@@ -151,11 +230,22 @@
 ==================================================*/
 
 .service{
+    position: relative;
     padding-bottom: 140px;
+    z-index: 2;
 }
 
 .service__h2{
     text-align: center;
+
+    @include tab-l{ /* < 1024px */
+        margin-top: 170px;
+    }
+    @include tab-s{ /* < 768px */
+        margin-top: 360px;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 
@@ -168,6 +258,12 @@
 .service-main__list__item{
     display: flex;
     align-items: center;
+
+    @include tab-s{ /* < 768px */
+        display: block;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .service-main__list__item:not(:first-of-type){
@@ -176,50 +272,111 @@
 
 .service-main__img{
     margin-right: 80px;
+    width: 34%;
 
     @include tab-l{ /* < 1024px */
         margin-right: 60px;
-        width: 330px;
+        // width: 330px;
     }
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
+    @include tab-s{ /* < 768px */
+        left: -5.5%; /* ⭐️小数点OK？ */
+        width: 100%;
+    }
 }
 
-.service-main__img > img{
-    @include tab-l{ /* < 1024px */
-        width: 330px;
+.service-main__img-1{
+    background: url(../img/service-main-1.jpg) no-repeat right center / cover;
+}
+
+.service-main__img-2{
+    background: url(../img/service-main-2.jpg) no-repeat right center / cover;
+}
+
+.service-main__img-3{
+    background: url(../img/service-main-3.jpg) no-repeat right center / cover;
+}
+
+.service-main__img-large{
+    height: 482px;/* ⭐️padding-top との違い */
+
+    @include tab-s{ /* < 768px */
+        height: 250px;
     }
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
+}
+
+.service-main__img-small{
+    height: 332px;/* ⭐️padding-top との違い */
+
+    @include tab-s{ /* < 768px */
+        height: 250px;
+    }
 }
 
 .service-main__detail{
+    width: 49%;
 
-    width: 550px;
+    @include tab-s{ /* < 768px */
+        margin: 30px auto;
+        width: 85%;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .service-main__h3{
     font-weight: bold;
     line-height: 1.5;
+
+    @include tab-s{ /* < 768px */
+        text-align: center;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .service-main__text{
     margin-top: 30px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 20px;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .service-main__icons{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 30px;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        display: block;
+        margin: 30px auto;
+        width: 80%;
+    }
+}
+
+.service-main__icons__inner{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    @include sp{ /* < 480px */
+        width: auto;
+    }
+}
+
+.service-main__icons__inner:nth-of-type(2){
+    @include sp{ /* < 480px */
+        margin-top: 25px;
+    }
 }
 
 .service-main__icons__img{
-    margin-top: 30px;
-    width: 25%;
+    width: 50%;
     min-width: 84px;
     text-align: center;
 }
@@ -236,11 +393,20 @@
     font-size: 1.2rem;
 }
 
-.seivece__btn{
+.service__btn{
 
 }
 
-.seivece__btn > a{
+.service__btn > a{
+    @include tab-s{ /* < 768px */
+        text-align: center;
+        width: 100%;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.service__btn > a{
 
 }
 
@@ -250,6 +416,17 @@
 .service-sub__list{
     margin-top: 140px;
     color: #000000;
+
+    // @include pc{ /* < 1366px */
+    // }
+    // @include tab-l{ /* < 1024px */
+    // }
+    @include tab-s{ /* < 768px */
+        margin-top: 120px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 100px;
+    }
 }
 
 .service-sub__item{
@@ -350,6 +527,12 @@
     margin-top: 25px;
     font-size: 1.6rem;
     line-height: 1;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 15px;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .case__category__wrapper{
@@ -374,6 +557,14 @@
 .case__btn{
     margin-top: 60px;
     text-align: center;
+}
+
+.case__btn > a{
+    @include tab-s{ /* < 768px */
+        width: 90%;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 

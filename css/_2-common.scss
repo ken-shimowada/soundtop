@@ -75,13 +75,27 @@ $sp: 480px;
 *** layout
 ==================================================*/
 
-.pc{
-  
-}
+// .pc{
+//   @include tab-l{ /* < 1024px */
+//     display: none;
+//   }
+// }
 
-.sp{
+// .tab{
+//   display: none;
 
-}
+//   @include tab-l{ /* < 1024px */
+//     display: block;
+//   }
+//   // @include tab-s{ /* < 768px */
+//   // }
+//   // @include sp{ /* < 480px */
+//   // }
+// }
+
+// .sp{
+
+// }
 
 
 .wrap{
@@ -89,6 +103,10 @@ $sp: 480px;
   max-width: 1100px;
   width: 80%;
 
+    @include tab-l{ /* < 1024px */
+      max-width: 820px;
+      width: 90%;
+    }
     @include tab-s{ /* < 768px */
       max-width: 720px;
       width: 90%;
@@ -99,13 +117,13 @@ $sp: 480px;
     }
 }
 
-.top-bg{
+.bg-black{
   display: block;
   position: relative;
   width: 100%;
   color: #fff;
   background: #000;
-  z-index: -2;
+  // z-index: -2;
 }
 
 

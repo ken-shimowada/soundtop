@@ -29,7 +29,9 @@
 
 .btn > a{
     display: inline-block;
-    padding: 18px 78px;
+    padding: 18px 0;
+    width: 250px;
+    text-align: center;
     color: #fff;
     font-family: 'Oswald', sans-serif;
     font-size: 2rem;
@@ -76,10 +78,46 @@
 .flex-wrapper{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include tab-s{ /* < 768px */
+        justify-content: center;
+    }
 }
 
 .flex-content{
     width: 31%;
+
+    @include tab-s{ /* < 768px */
+        width: 48%;
+    }
+    @include sp{ /* < 480px */
+        width: 100%;
+    }
+}
+
+.flex-content:nth-of-type(odd):not(:last-of-type){
+    @include tab-s{ /* < 768px */
+        margin-right: 4%;
+    }
+    @include sp{ /* < 480px */
+        margin-right: 0;
+    }
+}
+
+.flex-content:last-of-type{
+    @include tab-s{ /* < 768px */
+        margin-top: 6%;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 0;
+    }
+}
+
+.flex-content:not(:first-of-type){
+    @include sp{ /* < 480px */
+        margin-top: 35px;
+    }
 }
 
 .flex-content__img{
