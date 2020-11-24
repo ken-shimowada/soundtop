@@ -121,10 +121,11 @@ h1{
     font-size: 12rem;
   }
   @include tab-s{ /* < 768px */
+    display: inline-block;
     font-size: 10rem;
   }
   @include sp{ /* < 480px */
-    font-size: 7rem;
+    font-size: 6rem;
   }
 }
 
