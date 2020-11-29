@@ -28,6 +28,7 @@
 }
 
 .btn > a{
+    position: relative;
     display: inline-block;
     padding: 18px 0;
     width: 250px;
@@ -40,17 +41,29 @@
 }
 
 .btn-w > a{
+    position: relative;
     display: inline-block;
-    padding: 18px 60px;
+    padding: 18px 0;
+    width: 210px;
+    text-align: center;
     color: $key;
     font-family: 'Oswald', sans-serif;
     font-size: 2rem;
     letter-spacing: 0.05em;
     border: 2px solid $key;
     background: transparent;
+
+    @include tab-l{ /* < 1024px */
+        width: 250px;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .btn-g > a{
+    // position: relative;
     display: inline-block;
     padding: 18px 78px;
     color: #fff;
@@ -62,6 +75,35 @@
     @include tab-l{ /* < 1024px */
         padding: 18px 60px;
     }
+}
+
+.btn > a:after/* , .btn-g > a:after */{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    width: 26px;
+    height: 6px;
+    background: url(../img/3px-arrow-white.svg) no-repeat left center/26px 6px;
+
+    // @include tab-s{ /* < 768px */
+    //     right: 10%;
+    // }
+    // @include sp{ /* < 480px */
+    //     right: 5%;
+    // }
+}
+
+.btn-w > a:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 45%;
+    right: 16px;
+    width: 26px;
+    height: 6px;
+    background: url(../img/arrow-blue.svg) no-repeat left center/26px 6px;
 }
 
 .btn:hover{

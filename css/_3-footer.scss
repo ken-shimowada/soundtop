@@ -1,49 +1,119 @@
 footer{
     margin-top: 140px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 120px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 100px;
+    }
 }
 
+// footer__top
 
-// footer__contact
-
-.footer__contact{
+.footer__top{
     display:  flex;
     justify-content: space-between;
+    position: relative;
 }
 
-.footer__contact__link{
+.footer__top__btn__wrapper{
+    width: 100%;
+}
+
+.footer__top__btn{
+    display: block;
+    position: relative;
     padding: 42px 135px;
-    width: calc(100% - 130px);
+    // width: calc(100% - 130px);
     color: #ffffff;
     background: $key;
 
     @include pc{ /* < 1366px */
-        padding: 42px 11%;
+        padding: 35px 11%;
     }
     @include tab-l{ /* < 1024px */
-        padding: 42px 8%;
+        padding: 35px 8%;
     }
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        padding: 30px 8%;
+    }
+}
+
+.footer__top__btn:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    width: 50px;
+    height: 7px;
+    // background: url(../img/arrow-contact.svg) no-repeat right center / 50px 7px;
+
     // @include tab-s{ /* < 768px */
     // }
     // @include sp{ /* < 480px */
     // }
 }
 
-.footer__contact__inner{
+
+.footer__top__recruit{
+    display: none;
+
+    @include sp{ /* < 480px */
+        display: block;
+        background: $gray;
+    }
+}
+
+.footer__top__inner{
     display:  flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     max-width: 964px;
+
+    @include tab-s{ /* < 768px */
+        display: block;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
-.footer__contact__inner > span{
+.footer__top__inner > .oswald{
+    position: relative;
     padding-right: 100px;
     font-size: 40px;
-    background: url(../img/arrow-contact.svg) no-repeat right center / 50px 7px;
+    line-height: 1;
+    // background: url(../img/arrow-contact.svg) no-repeat left center / 50px 7px;
 }
 
-.footer__contact__text{
+.footer__top__inner > .oswald:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 220px;
+    width: 50px;
+    height: 7px;
+    background: url(../img/arrow-white.svg) no-repeat left center / 50px 7px;
+
+    @include sp{ /* < 480px */
+        left: 160px;
+    }
+}
+
+.footer__top__text{
     font-size: 1.4rem;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .page-top{
@@ -52,7 +122,15 @@ footer{
 	justify-content: center;
 	align-items: center;
     width: 130px;
-    background: $category-2;
+    background: $category;    
+
+    @include sp{ /* < 480px */
+        width: 80px;
+    }
+}
+
+.page-top:hover{
+    background: #d5d5d5;
 }
 
 .page-top > img{
@@ -64,9 +142,9 @@ footer{
 }
 
 
-// .footer
+// .footer-black
 
-.footer{
+.footer-black{
     padding: 80px 64px 40px;
     color: #fff;
     background: #000;
@@ -82,9 +160,9 @@ footer{
 
 }
 
-// .footer__top
+// .footer__middle
 
-.footer__top{
+.footer__middle{
     display: flex;
     justify-content: space-between;
     padding-bottom: 80px;
@@ -96,17 +174,21 @@ footer{
     // }
     @include sp{ /* < 480px */
         display: block;
-        margin-left: 10%;
+        margin: 0 auto;
         padding-bottom: 50px;
+        width: 190px;
     }
 }
 
 .footer__info{
-
+    @include tab-l{ /* < 1024px */
+        width: 190px;
+    }
 }
 
 .footer__logo{
     @include tab-l{ /* < 1024px */
+        display: inline-block;
         width: 190px;
     }
 }
@@ -116,6 +198,7 @@ footer{
 }
 
 .footer__info > address{
+    display: inline-block;
     margin-top: 35px;
     font-size: 1.4rem;
 }

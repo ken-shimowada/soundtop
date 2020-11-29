@@ -164,7 +164,7 @@
 
 
 .bar{
-    width: 40px;
+    width: 30px;
     height: 2px;
     display: block;
     position: absolute;
@@ -189,15 +189,15 @@
 .burger-btn.close .bar_top{
     transform: translate(-50%,10px) rotate(45deg);
     transition: transform .4s;
-    background-color: #333;
+    background-color: #fff;
 }
 .burger-btn.close .bar_mid{
     opacity: 0;
     transition: opacity .4s;
-    background-color: #333;
+    background-color: #fff;
 }
 .burger-btn.close .bar_bottom{
     transform: translate(-50%,-8px) rotate(-45deg);
     transition: transform .4s;
-    background-color: #333;
+    background-color: #fff;
 }

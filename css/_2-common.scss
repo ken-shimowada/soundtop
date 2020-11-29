@@ -64,6 +64,14 @@ $sp: 480px;
   font-family: 'Noto Sans JP', sans-serif
 }
 
+body{
+  @include tab-s{ /* < 768px */
+    font-size: 1.4rem;
+  }
+  // @include sp{ /* < 480px */
+  // }
+}
+
 .oswald{
   font-family: 'Oswald', sans-serif;
 }
@@ -93,9 +101,13 @@ $sp: 480px;
 //   // }
 // }
 
-// .sp{
+.sp{
+  display: none;
 
-// }
+  @include sp{ /* < 480px */
+    display: block;
+  }
+}
 
 
 .wrap{
@@ -142,7 +154,7 @@ h1{
     font-size: 10rem;
   }
   @include sp{ /* < 480px */
-    font-size: 7rem;
+    font-size: 6rem;
   }
 }
 
@@ -162,7 +174,7 @@ h2{
 }
 
 h2 + *{
-  margin-top: 70px;
+  margin-top: 70px; /* ⭐️60pxでもいいのでは？ */
 
   @include tab-s{ /* < 768px */
     margin-top: 5.8rem;

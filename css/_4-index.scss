@@ -20,34 +20,67 @@
 
 
 
-// ****** mv
+/*==================================================
+
+*** mv
+==================================================*/
 
 .mv{
+    position: relative;
     width: 100%;
-    height: 700px;
-    background: url(../img/mv.jpg) no-repeat 100% / cover;
+    height: 100vh;
+    background: url(../img/mv.jpg) no-repeat center center / cover;
+
+    @include tab-l{ /* < 1024px */
+        background: url(../img/tab-mv.jpg) no-repeat center center / cover;
+    }
+    @include tab-s{ /* < 768px */
+        display: flex;
+        justify-content: center;
+        background: url(../img/sp-mv.jpg) no-repeat center center / cover;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .mv__inner{
-    padding: 240px 0 0 100px;
+    position: absolute;
+    top: 35%;
+    left:20%;
+    // padding: 30% 0 0 15%;
 
     @include tab-l{ /* < 1024px */
         // padding: 240px 0 0 100px;    
     }
     @include tab-s{ /* < 768px */
-        // padding: 240px 0 0 100px;
+        top: 40%;
+        left: auto;
+        // padding: 260px 0 0 0;
     }
     @include sp{ /* < 480px */
-        // padding: 240px 0 0 100px;
+        // padding: 280px 0 0 0;
     }
 }
 
 .mv__inner__text{
-    margin-top: 2rem;
+    margin-top: 20px;
     font-family: serif;
     font-size: 3.2rem;
     color: #ffffff;
     text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+
+    @include tab-l{ /* < 1024px */
+        margin-top: 16px;
+        font-size: 2.8rem;
+    }
+    @include tab-s{ /* < 768px */
+        margin-top: 12px;
+        font-size: 2.4rem;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 6px;
+        font-size: 2rem;
+    }
 }
 
 
@@ -122,12 +155,12 @@
     height: 655px;
 
     @include tab-l{ /* < 1024px */
-        top: 100px;
+        top: 50px;
         width: 45%;
         height: 730px;
     }
     @include tab-s{ /* < 768px */
-        top: 675px;
+        top: 515px;
         width: 85%;
         height: 300px;
         background-position: center bottom;
@@ -233,16 +266,23 @@
     position: relative;
     padding-bottom: 140px;
     z-index: 2;
+
+    @include tab-s{ /* < 768px */
+        padding-bottom: 120px;
+    }
+    @include sp{ /* < 480px */
+        padding-bottom: 100px;
+    }
 }
 
 .service__h2{
     text-align: center;
 
     @include tab-l{ /* < 1024px */
-        margin-top: 170px;
+        margin-top: 186px;
     }
     @include tab-s{ /* < 768px */
-        margin-top: 360px;
+        margin-top: 330px;
     }
     // @include sp{ /* < 480px */
     // }
@@ -297,7 +337,7 @@
 }
 
 .service-main__img-large{
-    height: 482px;/* ⭐️padding-top との違い */
+    height: 442px;/* ⭐️padding-top との違い */
 
     @include tab-s{ /* < 768px */
         height: 250px;
@@ -394,7 +434,14 @@
 }
 
 .service__btn{
-
+    @include tab-s{ /* < 768px */
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+    }
+    @include sp{ /* < 480px */
+        width: 100%;
+    }
 }
 
 .service__btn > a{
@@ -476,7 +523,7 @@
 }
 
 .service-sub__btn{
-
+    
 }
 
 .service-sub__btn > a{
@@ -546,8 +593,7 @@
     padding: 0 8px;
     vertical-align: center;
     font-size: 1.2rem;
-    color: #ffffff;
-    background: $category-1;
+    background: $category;
 }
 
 .case__category-2{
@@ -555,16 +601,24 @@
 }
 
 .case__btn{
-    margin-top: 60px;
+    margin-top: 54px;
     text-align: center;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 45px;
+    }
+    @include sp{ /* < 480px */
+        // margin-top: 36px;
+    }
 }
 
 .case__btn > a{
     @include tab-s{ /* < 768px */
-        width: 90%;
+        width: 60%;
     }
-    // @include sp{ /* < 480px */
-    // }
+    @include sp{ /* < 480px */
+        width: 100%;
+    }
 }
 
 
@@ -577,10 +631,20 @@
 
 .recruit{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 120px;
-    padding: 80px 0;
+    // padding: 80px 0;
     text-align: center;
-    // height: ;
+    height: 630px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 100px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 80px;
+    }
 }
 
 .recruit:before{
@@ -588,10 +652,11 @@
     display: block;
     position: absolute;
     top: 0;
+    left: 0;
     width: 50%;
     height: 100%;
     // height: ;
-    background: url(../img/top-recruit-1.jpg) no-repeat center center / cover;
+    background: url(../img/top-recruit-1.jpg) no-repeat right 40% center / cover;
 }
 
 .recruit:after{
@@ -602,16 +667,29 @@
     right: 0;
     width: 50%;
     height: 100%;
-    // height: ;
     background: url(../img/top-recruit-2.jpg) no-repeat center center / cover;
+
 }
 
 .recruit__inner{
     display: inline-block;
     position: relative;
     padding: 60px 40px;
+    width: 590px;
     background: rgba(255,255,255,0.9);
     z-index: 1;
+
+    @include tab-l{ /* < 1024px */
+        width: 57.6%;
+        min-width: 340px;
+    }
+    @include tab-s{ /* < 768px */
+        padding: 40px 27px;
+    }
+    @include sp{ /* < 480px */
+        width: 70%;
+        min-width: 250px;
+    }
 }
 
 .recruit_h2{
@@ -631,15 +709,28 @@
 
 .recruit__text{
     margin: 30px auto 0;
-    max-width: 512px;
+   
+    @include tab-s{ /* < 768px */
+        margin: 25px auto 0;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
+.recruit__btn{
+
+}
+
+.recruit__btn > a{
+    @include sp{ /* < 480px */
+        width: 100%
+    }
+}
 
 
 /*==================================================
 
 *** news
-
 ==================================================*/
 
 .news{
@@ -656,15 +747,42 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+
+    @include tab-l{ /* < 1024px */
+        display: block;
+    }
+    // @include tab-s{ /* < 768px */
+    //     display: block;
+    // }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .news__h2{
     margin-top: 0;
+
+    @include tab-l{ /* < 1024px */
+        text-align: center;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .news__list{
     margin: 0;
     width: 67%;
+
+    @include tab-l{ /* < 1024px */
+        margin-top: 60px;
+        width: 100%;
+    }
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        margin-top: 4.6rem;
+    }
 }
 
 .news__list__item{
@@ -679,6 +797,14 @@
 .news__list__link{
     display: flex;
     justify-content: space-between;
+
+    @include tab-s{ /* < 768px */
+        display: block;
+        // width: 20%;
+        // min-width: auto;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .news__list__left{
@@ -686,27 +812,68 @@
     justify-content: space-between;
     margin-right: 30px;
     width: 30%;
-    min-width: 210px;
+    min-width: 200px;
+
+    @include tab-s{ /* < 768px */
+        // display: block;
+        // width: 20%;
+        // min-width: auto;
+    }
+    @include sp{ /* < 480px */
+        min-width: 195px;
+    }
+}
+
+.news__list__left > time{
+    // line-height: 24px;
 }
 
 .news__category{
+    margin-top: 3px;
     width: 120px;
-    height: 28px;
+    height: 22px;
     text-align: center;
-    // color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 22px;
     background: $category-2;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 0;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .news__list__right{
     width: 64%;
+
+    @include tab-s{ /* < 768px */
+        width: 100%;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .news__list__text{
-
+    @include tab-s{ /* < 768px */
+        margin-top: 5px;
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .news__btn{
     position: absolute;
     top: 165px;
+
+    @include tab-l{ /* < 1024px */
+        position: relative;
+        top: 0;
+        text-align: center;
+        margin-top: 42px;
+    }
+    @include tab-s{ /* < 768px */
+    }
+    // @include sp{ /* < 480px */
+    // }
 }
