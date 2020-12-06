@@ -90,10 +90,6 @@
 *** bg-black
 ==================================================*/
 
-.bg-black{
-    width: 100%;
-}
-
 #top .bg-black:before{
     content: "";
     display: block;
@@ -319,7 +315,6 @@
         // width: 330px;
     }
     @include tab-s{ /* < 768px */
-        left: -5.5%; /* ⭐️小数点OK？ */
         width: 100%;
     }
 }
@@ -337,18 +332,18 @@
 }
 
 .service-main__img-large{
-    height: 442px;/* ⭐️padding-top との違い */
+    padding-top: 442px;/* ⭐️padding-top との違い */
 
     @include tab-s{ /* < 768px */
-        height: 250px;
+        padding-top: 250px;
     }
 }
 
 .service-main__img-small{
-    height: 332px;/* ⭐️padding-top との違い */
+    padding-top: 332px;/* ⭐️padding-top との違い */
 
     @include tab-s{ /* < 768px */
-        height: 250px;
+        padding-top: 250px;
     }
 }
 
@@ -364,7 +359,6 @@
 }
 
 .service-main__h3{
-    font-weight: bold;
     line-height: 1.5;
 
     @include tab-s{ /* < 768px */
@@ -498,16 +492,9 @@
     align-items: center;
     position: absolute;
     bottom: 0;
-    padding: 20px;
+    padding: 20px 15px;
     width: 100%;
     background: rgba(255,255,255,0.9);
-}
-
-.service-sub__detail__inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
 }
 
 .service-sub__h3{
@@ -522,15 +509,16 @@
     font-size: 1.2rem;
 }
 
-.service-sub__btn{
-    
+.service-sub__h3:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    width: 26px;
+    height: 6px;
+    background: url(../img/arrow-blue.svg) no-repeat left center/26px 6px;
 }
-
-.service-sub__btn > a{
-    color: $key;
-    border-bottom: 2px solid $key;
-}
-
 
 
 
@@ -786,8 +774,12 @@
 }
 
 .news__list__item{
-    padding: 24px 20px;
+    padding: 24px 30px;/* ⭐️arrow入れるか検討 */
     border-bottom: 1px solid #e3e3e3;
+
+    @include sp{ /* < 480px */
+        padding: 24px 20px;
+    }
 }
 
 .news__list__item:first-of-type{
@@ -864,7 +856,8 @@
 
 .news__btn{
     position: absolute;
-    top: 165px;
+    bottom: 0;
+    // top: 165px;
 
     @include tab-l{ /* < 1024px */
         position: relative;
@@ -872,8 +865,14 @@
         text-align: center;
         margin-top: 42px;
     }
-    @include tab-s{ /* < 768px */
-    }
+    // @include tab-s{ /* < 768px */
+    // }
     // @include sp{ /* < 480px */
     // }
+}
+
+.news__btn > a{
+    @include tab-s{ /* < 768px */
+        width: 60%;
+    }
 }

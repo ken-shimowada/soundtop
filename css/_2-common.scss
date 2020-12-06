@@ -198,6 +198,7 @@ h2 + *{
 
 h3{
   font-size: 2.4rem;
+  font-weight: bold;
 
   @include tab-s{ /* < 768px */
     font-size: 2rem;

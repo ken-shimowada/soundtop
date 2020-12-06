@@ -1,0 +1,171 @@
+/* 
+
+*** service__title
+*** service__head
+*** service-flow
+*** service__nav
+
+*/
+
+@import "1-initialize";
+@import "1-variable";
+@import "2-common";
+@import "3-header";
+@import "3-footer";
+@import "3-module";
+
+
+
+/*==================================================
+
+*** service__title
+==================================================*/
+
+.advantage__title{
+    background: url(../img/service-title.jpg) no-repeat center center / cover;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+
+
+/*==================================================
+
+*** service__head
+==================================================*/
+
+.advantage__head{
+    padding: 120px 0 200px;
+
+    @include tab-s{ /* < 768px */
+        padding: 100px 0 200px;
+    }
+    @include sp{ /* < 480px */
+        padding: 80px 0 150px;
+    }
+}
+
+.advantage__head > .wrap{
+    @include sp{ /* < 480px */
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.content{
+    position: relative;
+    // padding-top: 417px;
+}
+
+.content:not(:first-of-type){
+    margin-top: 132px;
+}
+
+.content__detail{
+    width: 50%;
+}
+
+.content__number-1::before{
+    content: "1";
+    position: absolute;
+    top: 30px;
+    left: -34px;
+    width: 66px;
+    height: 252px;
+    color: $key;
+    font-size: 140px;
+    font-family: 'Oswald', sans-serif;;
+    background: url(../img/service-text-1.svg) no-repeat;
+
+    @include tab-s{ /* < 768px */
+        top: 245px;
+        left: -54px;
+    }
+    @include sp{ /* < 480px */
+        left: 235px;
+    }
+}
+
+.content__number-2::before{
+    content: "2";
+    position: absolute;
+    top: 30px;
+    left: -35px;
+    width: 62px;
+    height: 337px;
+    color: $key;
+    font-size: 140px;
+    font-family: 'Oswald', sans-serif;;
+    background: url(../img/service-text-2.svg) no-repeat;
+
+    @include tab-s{ /* < 768px */
+        top: 245px;
+        left: -46px;
+    }
+    @include sp{ /* < 480px */
+        // left: 235px;
+    }
+}
+
+.content__number-3::before{
+    content: "3";
+    position: absolute;
+    top: 30px;
+    left: -34px;
+    width: 66px;
+    height: 252px;
+    color: $key;
+    font-size: 140px;
+    font-family: 'Oswald', sans-serif;;
+    background: url(../img/service-text-1.svg) no-repeat;
+
+    @include tab-s{ /* < 768px */
+        top: 245px;
+        left: -54px;
+    }
+    @include sp{ /* < 480px */
+        left: 235px;
+    }
+}
+
+.content__title{
+    font-family: YakuHanJP,'Noto Sans JP', sans-serif;
+}
+
+.content__img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 270px;
+    background: url(../img/service-content-img.jpg) no-repeat center center / cover;
+
+    @include tab-s{ /* < 768px */
+        width: 80%;
+        height: 250px;
+    }
+    @include sp{ /* < 480px */
+        width: 90%;
+    }
+}
+
+.content__img-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 270px;
+    background: url(../img/service-content-img-2.jpg) no-repeat center center / cover;
+
+    @include tab-s{ /* < 768px */
+        width: 80%;
+        height: 250px;
+    }
+    @include sp{ /* < 480px */
+        width: 90%;
+    }
+}
+
