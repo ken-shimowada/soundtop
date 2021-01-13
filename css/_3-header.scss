@@ -1,4 +1,68 @@
 
+/* 
+
+*** gnav
+*** gnav__list__btn
+*** burger-btn
+*** drawer
+*** drawer__sub__list
+
+*/
+
+@import "1-variable";
+@import "2-common";
+
+
+header{
+    width: 100%;
+    z-index: 5;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0px;
+}
+
+.page__title{
+    margin-top: 74px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 68px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 60px;
+    }
+}
+
+.header-top{
+    visibility: hidden;
+}
+
+header.fixed {
+    visibility: visible;
+    left: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+    0%{
+        margin-top:-64px;
+    }
+    100%{
+        margin-top:0;
+    }
+}
+
+// header{
+//     transition: all 0.3s ease 0s;
+// }
+
+
 // ****** gnav
 
 .gnav{
@@ -9,6 +73,13 @@
     background: #111111;
     color: #ffffff;
     font-size: 1.5rem;
+
+    @include tab-s{ /* < 768px */
+        height: 68px;
+    }
+    @include sp{ /* < 480px */
+        height: 60px;
+    }
 }
 
 .gnav__nav{
@@ -16,11 +87,11 @@
     justify-content: space-between;
     align-items: center;
     margin-left: 30px;
-    width: 820px;
+    width: 730px;
 
     @include pc{ /* < 1366px */
-        width: 60%;
-        min-width: 680px;
+        width: 50%;
+        min-width: 630px;
     }
     @include tab-l{ /* < 1024px */
         display: inline-block;
@@ -36,7 +107,7 @@
 
 .gnav__logo{
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 60px;
     // min-width: 236px;
 
     @include pc{ /* < 1366px */
@@ -50,7 +121,7 @@
     // }
     @include sp{ /* < 480px */
         width: 43%;
-        min-width: 180px;
+        min-width: 150px;
     }
 }
 
@@ -79,18 +150,84 @@
     // margin-right: 30px;
 }
 
-.gnav__list__item > a{
-
+.gnav__list__link{
+    position: relative;
 }
+
+.gnav__list__link:after {
+	content: '';
+	background: rgba(255, 255, 255, .7);
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+	transition: transform .4s ease;
+	height: 2px;
+	width: 100%;
+}
+.gnav__list__link:hover:after {
+	transform: scaleX(1);
+}
+
+
+
+
+// ****** gnav__list__btn
+
+.gnav__list__btn{
+    position: relative;
+}
+
+.gnav__sub__list{
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: -30px;
+    padding: 15px 0;
+    width: 300px;
+    background: #111;
+}
+
+.gnav__sub__list.open{
+    display: block;
+}
+
+.gnav__sub__item{
+    padding: 6px 30px;
+}
+
+.gnav__sub__item > a{
+}
+
 
 
 // ****** gnav__btns
 
 .gnav__btns{
     display: flex;
+
+    @include tab-s{ /* < 768px */
+        margin-left: auto;
+    }
 }
 
-.btn__resruit{
+.btn__link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 13px 0 16px;
+    height: 74px;
+
+    @include tab-s{ /* < 768px */
+        height: 68px;
+    }
+    @include sp{ /* < 480px */
+        height: 60px;
+    }
+}
+
+.btn__recruit{
     width: 113px;
 
     @include tab-s{ /* < 768px */
@@ -98,62 +235,81 @@
     }
 }
 
+.btn__recruit .btn__link{
+    width: 113px;
+    background: $gray;
+    transition: .2s;
+}
+
+.btn__recruit .btn__link:hover{
+    background: #484848;
+}
+
+.btn__recruit__img{
+    width: 14px;
+}
+
+.btn__recruit__text{
+    margin-left: 6px;
+    margin-bottom: 2px;
+}
+
 .btn__contact{
     @include sp{ /* < 480px */
-        display: none;
+        // display: none;
     }
 }
 
-.btn__resruit > a,
-.btn__contact > a{
-    position: relative;
-    display: inline-block;
-    padding: 0 18px 0 35px;
-    line-height: 74px;
-}
-
-.btn__resruit > a{
-    width: 113px;
-    background: $gray;
-}
-
-.btn__contact > a{
+.btn__contact .btn__link{
     width: 143px;
-}
-
-.btn__resruit > a:before{
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 30px;
-    left: 18px;
-    background: url(../img/icn_recruit.svg) no-repeat center center/13px 14px;
-    width: 13px;
-    height: 14px;
-
-}
-
-.btn__contact > a{
     background: $key;
+    transition: .2s;
+
+    @include tab-s{ /* < 768px */
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        width: 60px;
+    }
+    @include sp{ /* < 480px */
+        width: 40px;
+        background: #111;
+    }
 }
 
-.btn__contact > a:before{
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 29px;
-    left: 15px;
-    background: url(../img/icn_contact.svg) no-repeat center center/16px 18px;
+.btn__contact .btn__link:hover{
+    background: #2500cd;
+    // transition: .3s;
+}
+
+.btn__contact__img{
     width: 16px;
-    height: 18px;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        width: 18px;
+    }
 }
 
+.btn__contact__text{
+    margin-left: 6px;
+    margin-bottom: 2px;
+
+    @include tab-s{ /* < 768px */
+        display: none;
+    }
+}
 
 
 // ****** burger-btn
 
 .burger-btn{
     display: none;
+    appearance: none;
+    background: #111;
+    cursor: pointer;
+    border: 0;
 
     @include tab-l{ /* < 1024px */
         display: block;
@@ -164,9 +320,8 @@
     }
 }
 
-
 .bar{
-    width: 30px;
+    width: 34px;
     height: 2px;
     display: block;
     position: absolute;
@@ -179,27 +334,291 @@
     top: 9px;
     transition: transform .4s;
 }
+
 .bar_mid{
     top: 50%;
     transform: translate(-50%,-50%);
     transition: opacity .4s;
 }
+
 .bar_bottom{
     bottom: 10px;
     transition: transform .4s;
 }
+
 .burger-btn.close .bar_top{
     transform: translate(-50%,10px) rotate(45deg);
     transition: transform .4s;
     background-color: #fff;
 }
+
 .burger-btn.close .bar_mid{
     opacity: 0;
     transition: opacity .4s;
     background-color: #fff;
 }
+
 .burger-btn.close .bar_bottom{
     transform: translate(-50%,-8px) rotate(-45deg);
     transition: transform .4s;
     background-color: #fff;
+}
+
+.burger-btn.close{
+    background-color: transparent;
+}
+
+
+
+// ****** drawer
+
+.drawer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background: url(../img/nav-bg.jpg) no-repeat center center / cover;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease, visibility .4s ease;
+    z-index: 5;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        background: url(../img/sp-nav-bg.jpg) no-repeat center center / cover;
+    }
+}
+
+.drawer.open{
+    // メニュー全表示動作
+    visibility: visible;
+    z-index: 2;
+    opacity: 1;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.drawer__inner{
+    position: relative;
+    margin-left: 10%;
+
+    @include tab-s{ /* < 768px */
+        margin-left: 5%;
+    }
+    @include sp{ /* < 480px */
+        position: static;
+        width: 90%;
+        height: 95vh;
+    }
+}
+
+.drawer__list__wrapper{
+    display: flex;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        display: block;
+    }
+}
+
+.drawer__list{
+}
+
+.drawer__list:last-of-type{
+    margin-left: 80px;
+
+    @include tab-s{ /* < 768px */
+        margin-left: 30px;
+    }
+    @include sp{ /* < 480px */
+        margin-left: 0;
+    }
+}
+
+
+// ⭐️margin-topは高さで可変させた方が良いか
+.drawer__list__item{
+    margin-top: 50px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 42px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 25px;
+    }
+}
+
+.drawer__list__item:nth-of-type(n+4) {
+    margin-left: 80px;
+
+    @include tab-s{ /* < 768px */
+        margin-left: 30px;
+    }
+    @include sp{ /* < 480px */
+        margin-left: 0;
+    }
+}
+
+.drawer__list__item > a{
+    font-size: 5rem;
+
+    @include tab-s{ /* < 768px */
+        font-size: 4rem;
+    }
+    @include sp{ /* < 480px */
+        font-size: 3rem;
+    }
+}
+
+.li-jp{
+    display: block;
+    font-size: 1.6rem;
+
+    @include tab-s{ /* < 768px */
+        font-size: 1.4rem;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 2px;
+        line-height: 1;
+        font-size: 1.3rem;
+    }
+}
+
+.drawer__btn{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: auto 0 0 70px;
+    width: 190px;
+
+    @include tab-s{ /* < 768px */
+        // display: flex;
+        // position: absolute;
+        // bottom: 0;
+        margin-left: 30px;
+        width: 150px;
+    }
+    @include sp{ /* < 480px */
+        display: flex;
+        justify-content: space-between;
+        // position: static;
+        right: auto;
+        margin-left: 0;
+        margin-bottom: 4vh;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+.drawer__recruit{
+    background: $gray;
+
+    @include tab-s{ /* < 768px */
+        // width: 50%;
+    }
+    @include sp{ /* < 480px */
+        width: 49%;
+    }
+}
+
+.drawer__contact{
+    margin-top: 20px;
+    background: $key;
+
+    // @include tab-s{ /* < 768px */
+    // }
+    @include sp{ /* < 480px */
+        margin-top: 0;
+        width: 49%;
+    }
+}
+
+// .drawer__recruit, .drawer__contact{
+//     width: 190px;
+//     text-align: center;
+// }
+
+.drawer__recruit__text, .drawer__contact__text{
+    display: inline-block;
+    padding: 18px 0 18px 20px;
+    width: 100%;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    z-index: 1;
+
+    @include tab-s{ /* < 768px */
+        padding: 15px 0 15px 16px;
+        font-size: 2.5rem;
+    }
+    @include sp{ /* < 480px */
+        padding: 15px 0;
+        font-size: 2.2rem;
+    }
+}
+
+.drawer__btn-jp{
+    display: block;
+    margin-top: 5px;
+    font-size: 1.6rem;
+    // font-weight: normal;
+    line-height: 1;
+
+    @include tab-s{ /* < 768px */
+        font-size: 1.4rem;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 2px;
+        font-size: 1.2rem;
+    }
+}
+
+
+// ****** drawer__sub__list
+
+.drawer__sub__list{
+    margin-top: 22px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 18px;
+    }
+    @include sp{ /* < 480px */
+        display: none;
+    }
+}
+
+.drawer__sub__list.open{
+    @include sp{ /* < 480px */
+        display: block;
+    }
+}
+
+.drawer__sub__item{
+    position: relative;
+    margin-top: 12px;
+    padding-left: 17px;
+}
+
+.drawer__sub__item::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 2px;
+    background: #fff;
+}
+
+.drawer__sub__item > a{
+
 }

@@ -1,0 +1,209 @@
+/* 
+
+*** case__article
+*** case-other
+*** 
+
+*/
+
+@import "1-initialize";
+@import "1-variable";
+@import "2-common";
+@import "3-header";
+@import "3-footer";
+@import "3-module";
+
+
+
+/*==================================================
+
+*** case__article
+==================================================*/
+
+.case__article{
+    margin-top: 194px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 168px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 140px;
+    }
+}
+
+.case__article__h2{
+    text-align: center;
+    font-size: 5rem;
+    font-family: "Oswald", 'Noto Sans JP', sans-serif;
+
+    @include tab-s{ /* < 768px */
+        font-size: 4.3rem;
+    }
+    @include sp{ /* < 480px */
+        font-size: 3.6rem;
+    }
+}
+
+.case__article__img{
+    margin-top: 50px;
+    width: 100%;
+    height: 450px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 43px;
+        height: 300px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 36px;
+        height: 200px;
+    }
+}
+
+.case__article__img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case__article__detail{
+    margin-top: 70px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 60px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 50px;
+    }
+}
+
+.case__article__item{
+    padding-top: 20px;
+}
+
+.case-01__btn{
+    margin: 70px auto 0;
+    text-align: center;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 60px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 50px;
+    }
+}
+
+
+
+/*==================================================
+
+*** case-other
+==================================================*/
+
+.case-other{
+    margin-top: 100px;
+}
+
+// .case-other__h2{
+//     margin-top: 0;
+//     text-align: center;
+//     font-size: 5rem;
+//     font-family: "Oswald", 'Noto Sans JP', sans-serif;
+
+//     // @include tab-s{ /* < 768px */
+//     // }
+//     // @include sp{ /* < 480px */
+//     // }
+// }
+
+// .case-other__h2 > .h2-jp{
+//     margin-top: 5px;
+//     font-size: 1.4rem;
+
+//     // @include tab-s{ /* < 768px */
+//     // }
+//     // @include sp{ /* < 480px */
+//     // }
+// }
+
+// .case-other__list{
+
+// }
+
+// .case-other__item{
+
+// }
+
+
+
+.case__h2{
+    margin-top: 0;
+    font-size: 4.5rem;
+
+    @include tab-s{ /* < 768px */
+        font-size: 4rem;
+    }
+    @include sp{ /* < 480px */
+        font-size: 3.3rem;
+    }
+}
+
+.case__h2 > .h2-jp{
+    margin-top: 10px;
+    font-size: 1.4rem;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 5px;
+    }
+    @include sp{ /* < 480px */
+        // margin-top: 2px;
+    }
+}
+
+// ooooooooooooooo
+.case__list{
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+// /*==================================================
+
+// *** case__title
+// ==================================================*/
+
+// .case__title{
+//     background: url(../img/case-title.jpg) no-repeat center center / cover;
+
+//     @include tab-s{ /* < 768px */
+//         background: url(../img/tab-case-title.jpg) no-repeat center center / cover;
+//     }
+//     @include sp{ /* < 480px */
+//         background: url(../img/sp-case-title.jpg) no-repeat center center / cover;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+/*==================================================
+
+*** 
+==================================================*/
+
+
+
+
+
+/*==================================================
+
+*** 
+==================================================*/

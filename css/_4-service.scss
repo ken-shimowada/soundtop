@@ -3,7 +3,7 @@
 *** service__title
 *** service__head
 *** service-flow
-*** service__nav
+*** service__nav → module.scss
 
 */
 
@@ -16,6 +16,11 @@
 
 
 
+#service footer{
+    margin-top: 0;
+}
+
+
 /*==================================================
 
 *** service__title
@@ -24,10 +29,12 @@
 .service__title{
     background: url(../img/service-title.jpg) no-repeat center center / cover;
 
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
+    @include tab-s{ /* < 768px */
+        background: url(../img/tab-service-title.jpg) no-repeat center center / cover;
+    }
+    @include sp{ /* < 480px */
+        background: url(../img/sp-service-title.jpg) no-repeat center center / cover;
+    }
 }
 
 
@@ -55,6 +62,12 @@
     }
 }
 
+// #service .content__detail-left{
+//     @include tab-s{ /* < 768px */
+//         left: 0;
+//     }
+// }
+
 .content__detail-left::before{
     content: "";
     position: absolute;
@@ -72,6 +85,13 @@
     // @include sp{ /* < 480px */
     // }
 }
+
+
+// #service .content__detail-right{
+//     @include tab-s{ /* < 768px */
+//         left: 30px;
+//     }
+// }
 
 .content__detail-right::before{
     content: "";
@@ -193,94 +213,7 @@
 
 /*==================================================
 
-*** service__nav
+*** service__nav → module.scss
 ==================================================*/
 
-.service__nav{
-    margin-top: 120px;
-    padding: 60px 0;
-    color: #fff;
-    background: url(../img/service-nav.jpg) no-repeat center center / cover;
 
-    @include tab-s{ /* < 768px */
-        margin-top: 100px;
-        padding: 50px 0;
-    }
-    @include sp{ /* < 480px */
-        margin-top: 80px;
-        padding: 45px 0;
-    }
-}
-
-.service__wrap{
-    display: flex;
-    justify-content: space-between;
-
-    @include tab-l{ /* < 1024px */
-        display: block;
-    }
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
-}
-
-.service__nav__h2{
-    margin-top: 0;
-    font-size: 4rem;
-}
-
-.service__nav__h2 > .h2-jp{
-    margin-top: 5px;
-    font-size: 1.6rem;
-}
-
-.service__nav__list__wrapper{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 3% 0 0;
-    width: 580px;
-    height: 110px;
-
-    @include tab-l{ /* < 1024px */
-        margin: 20px 0 0 0;
-    }
-    @include tab-s{ /* < 768px */
-        height: 230px;
-        width: auto;
-    }
-}
-
-.service__nav__item{
-    position: relative;
-    padding-left: 30px;
-}
-
-.service__nav__item::before{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 15px;
-    height: 2px;
-    background: #fff;
-
-}
-
-.service__nav__item:nth-of-type(n+4):nth-child(-n+6){
-    // margin-left: 20px;    
-
-    // @include tab-l{ /* < 1024px */
-    // }
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
-}
-
-.service__nav__item > a{
-
-}

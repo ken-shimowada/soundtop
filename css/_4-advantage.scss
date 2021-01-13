@@ -1,9 +1,8 @@
 /* 
 
-*** service__title
-*** service__head
-*** service-flow
-*** service__nav
+*** advantage__title
+*** advantage__head
+*** service__nav → module.scss
 
 */
 
@@ -18,16 +17,18 @@
 
 /*==================================================
 
-*** service__title
+*** advantage__title
 ==================================================*/
 
 .advantage__title{
-    background: url(../img/service-title.jpg) no-repeat center center / cover;
+    background: url(../img/advantage-title.jpg) no-repeat center center / cover;
 
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
+    @include tab-s{ /* < 768px */
+        background: url(../img/tab-advantage-title.jpg) no-repeat center center / cover;
+    }
+    @include sp{ /* < 480px */
+        background: url(../img/sp-advantage-title.jpg) no-repeat center center / cover;
+    }
 }
 
 
@@ -68,66 +69,72 @@
     width: 50%;
 }
 
+#advantage .content__detail__inner-left{
+    padding: 40px 38px 40px 34px;
+    background: rgb(4, 4, 4);
+
+    // @include tab-s{ /* < 768px */
+        padding: 40px 20px 40px 34px;
+    // }
+    // @include sp{ /* < 480px */
+    //     padding: 40px 20px 40px 20px;
+    // }
+}
+
 .content__number-1::before{
-    content: "1";
+    content: "";
     position: absolute;
-    top: 30px;
-    left: -34px;
-    width: 66px;
-    height: 252px;
+    top: 20px;
+    left: -44px;
+    width: 90px;
+    height: 330px;
     color: $key;
-    font-size: 140px;
-    font-family: 'Oswald', sans-serif;;
-    background: url(../img/service-text-1.svg) no-repeat;
+    background: url(../img/advantage-text-1.svg) no-repeat;
 
     @include tab-s{ /* < 768px */
-        top: 245px;
-        left: -54px;
+        top: 174px;
+        left: -45px;
     }
     @include sp{ /* < 480px */
-        left: 235px;
+        left: 220px;
     }
 }
 
 .content__number-2::before{
-    content: "2";
+    content: "";
     position: absolute;
-    top: 30px;
-    left: -35px;
-    width: 62px;
-    height: 337px;
+    top: 20px;
+    left: -75px;
+    width: 105px;
+    height: 338px;
     color: $key;
-    font-size: 140px;
-    font-family: 'Oswald', sans-serif;;
-    background: url(../img/service-text-2.svg) no-repeat;
+    filter: drop-shadow(-3px 7px 20px rgba(0,0,0,0.6));
+    background: url(../img/advantage-text-2.svg) no-repeat;
 
     @include tab-s{ /* < 768px */
-        top: 245px;
-        left: -46px;
+        top: 194px;
     }
     @include sp{ /* < 480px */
-        // left: 235px;
+        top: 194px;
     }
 }
 
 .content__number-3::before{
-    content: "3";
+    content: "";
     position: absolute;
-    top: 30px;
-    left: -34px;
-    width: 66px;
-    height: 252px;
+    top: 20px;
+    left: -60px;
+    width: 104px;
+    height: 300px;
     color: $key;
-    font-size: 140px;
-    font-family: 'Oswald', sans-serif;;
-    background: url(../img/service-text-1.svg) no-repeat;
+    background: url(../img/advantage-text-3.svg) no-repeat;
 
     @include tab-s{ /* < 768px */
-        top: 245px;
-        left: -54px;
+        top: 174px;
+        left: -62px;
     }
     @include sp{ /* < 480px */
-        left: 235px;
+        left: 210px;
     }
 }
 
@@ -168,4 +175,6 @@
         width: 90%;
     }
 }
+
+
 

@@ -1,0 +1,326 @@
+/* 
+
+*** contact__title
+*** contact__wrapper
+*** 
+
+*/
+
+@import "1-initialize";
+@import "1-variable";
+@import "2-common";
+@import "3-header";
+@import "3-footer";
+@import "3-module";
+
+
+
+/*==================================================
+
+*** contact__title
+==================================================*/
+
+.contact__title{
+    background: url(../img/news-title.jpg) no-repeat center right 20% / cover;
+
+    @include tab-s{ /* < 768px */
+        background: url(../img/tab-news-title.jpg) no-repeat center right 20% / cover;
+    }
+    @include sp{ /* < 480px */
+        background: url(../img/sp-news-title.jpg) no-repeat center center / cover;
+    }
+}
+
+
+
+/*==================================================
+
+*** contact
+==================================================*/
+
+.contact{
+    margin-top: 120px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 100px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 80px;
+    }
+}
+
+.contact__inner{
+    padding: 0 50px;
+
+    @include tab-s{ /* < 768px */
+        padding: 20px;
+    }
+    @include sp{ /* < 480px */
+        padding: 0;
+    }
+}
+
+.contact__text{
+
+}
+
+.form{
+    margin-top: 80px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 60px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 50px;
+    }
+}
+
+.form .list__item{
+    padding-top: 30px;
+
+    @include tab-s{ /* < 768px */
+        display: block;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.form .list__item__title{
+    padding: 10px 0 10px 60px;
+    min-width: 210px;
+    line-height: 1.4;
+
+    @include tab-s{ /* < 768px */
+        display: block;
+        padding-bottom: 10px;
+        min-width: 200px;
+    }
+}
+
+.form .list__item__detail{
+    padding: 10px 0 10px 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    transition: all 0.2s 0s ease;
+    @include tab-s{ /* < 768px */
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+    }
+}
+
+.form .list__item__detail:hover{
+    background: #f2f2f2;
+}
+
+.form .list__item__detail:first-of-type{
+    @include tab-s{ /* < 768px */
+        padding-top: 10px;
+    }
+}
+
+
+// ⭐️クリック時にborder出ないようにしたい
+// .form .list__item__detail:focus{
+//     border: none;
+// }
+
+.required{
+    position: relative;
+}
+
+.required:before{
+    content: "必須";
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 0 8px;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    background: $key;
+
+    @include tab-s{ /* < 768px */
+        font-size: 1.2rem;
+    }
+}
+
+.optional{
+    position: relative;
+}
+
+.optional:before{
+    content: "任意";
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 0 8px;
+    color: #222;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    background: #eee;
+
+    @include tab-s{ /* < 768px */
+        font-size: 1.2rem;
+    }
+}
+
+input[type="file"]{
+    padding-top: -5px;
+    font-size: 1.4rem;
+    // position: relative;
+    // opacity: 0;
+    // margin-left: 25px;
+
+    @include tab-s{ /* < 768px */
+        font-size: 1.2rem;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+label[for="fileinput"] + .list__item__detail{
+    padding-top: 6px;
+}
+
+.form .fileinput__wrapper:hover{
+    background-color: transparent;
+}
+
+.fileinput{
+    @include tab-s{ /* < 768px */
+        margin-top: 10px;
+    }
+}
+
+.fileinput-text{
+    margin: 15px 20px 25px 0;
+    font-size: 0.9em;
+}
+
+#tel, #question{
+    width: 30%;
+    min-width: 300px;
+
+    @include sp{ /* < 480px */
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+#question{
+    background-color: transparent;
+}
+
+#question:hover{
+    background: #ececec;
+}
+
+// ⭐font-size変更できない
+#question > option[value="select"]{
+    font-size: 1.6rem;
+}
+
+.list__item__title[for="detail"]{
+    padding-bottom: 35px;
+
+    @include tab-s{ /* < 768px */
+        padding-bottom: 10px;
+    }
+    // @include sp{ /* < 480px */
+    // }
+}
+
+.list__item__title[for="detail"]+.list__item__detail{
+    padding-bottom: 28px;
+    background: transparent;
+}
+
+#detail{
+    padding: 10px;
+    border: 2px solid #efefef;
+    width: calc(100% - 20px);
+    height: 250px;
+    transition: all 0.2s 0s ease;
+
+    @include tab-s{ /* < 768px */
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+#detail:hover{
+    background: #fafafa;
+}
+
+
+
+.privacy-check{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 1.4rem;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 50px;
+        font-size: 1.2rem;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 40px;
+    }
+}
+
+.privacy-link{
+    border-bottom: 1px solid $key;
+    color: $key;
+}
+
+.privacy__text{
+    margin-top: 20px;
+}
+
+button.btn{
+    display: block;
+    margin: 50px auto 0;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    border: none;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 44px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 38px;
+    }
+}
+
+
+
+
+/*==================================================
+
+*** 
+==================================================*/
+
+/* ******  ****** */
+
+
+
+/* ******  ****** */
+
+
+
+/* ******  ****** */
+
+
+
+
+
+
+
+
+

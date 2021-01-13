@@ -1,0 +1,98 @@
+/* 
+
+*** case__title
+*** cat__nav  
+*** news__list
+*** 
+
+*/
+
+@import "1-initialize";
+@import "1-variable";
+@import "2-common";
+@import "3-header";
+@import "3-footer";
+@import "3-module";
+
+
+
+/*==================================================
+
+*** news__title
+==================================================*/
+
+.news__title{
+    background: url(../img/news-title.jpg) no-repeat center right 20% / cover;
+
+    @include tab-s{ /* < 768px */
+        background: url(../img/tab-news-title.jpg) no-repeat center right 20% / cover;
+    }
+    @include sp{ /* < 480px */
+        background: url(../img/sp-news-title.jpg) no-repeat center center / cover;
+    }
+}
+
+
+
+/*==================================================
+
+*** news__list   → module.scss(news__list)
+==================================================*/
+
+.news__list__wrapper{
+    margin-top: 100px;
+
+    @include tab-s{ /* < 768px */
+        margin-top: 80px;
+    }
+    @include sp{ /* < 480px */
+        margin-top: 60px;
+    }
+}
+
+.news__list{
+    width: 100%;
+    font-size: 1.7rem;
+}
+
+.news__list__text-2{
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.disable{
+    cursor: default;
+}
+
+
+
+/*==================================================
+
+*** news__list   → module.scss
+==================================================*/
+
+
+
+/*==================================================
+
+*** 
+==================================================*/
+
+/* ******  ****** */
+
+
+
+/* ******  ****** */
+
+
+
+/* ******  ****** */
+
+
+
+
+
+
+
+
+

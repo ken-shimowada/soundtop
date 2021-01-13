@@ -19,6 +19,22 @@
 @import "3-module";
 
 
+#top main{
+    margin-top: -74px;
+}
+
+.block-revealer__element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+
 
 /*==================================================
 
@@ -31,29 +47,29 @@
     height: 100vh;
     background: url(../img/mv.jpg) no-repeat center center / cover;
 
-    @include tab-l{ /* < 1024px */
-        background: url(../img/tab-mv.jpg) no-repeat center center / cover;
-    }
+    // @include tab-l{ /* < 1024px */
+    // }
     @include tab-s{ /* < 768px */
         display: flex;
         justify-content: center;
+        background: url(../img/tab-mv.jpg) no-repeat center center / cover;
+    }
+    @include sp{ /* < 480px */
         background: url(../img/sp-mv.jpg) no-repeat center center / cover;
     }
-    // @include sp{ /* < 480px */
-    // }
 }
 
 .mv__inner{
     position: absolute;
     top: 35%;
-    left:20%;
+    left:10%;
     // padding: 30% 0 0 15%;
 
     @include tab-l{ /* < 1024px */
         // padding: 240px 0 0 100px;    
     }
     @include tab-s{ /* < 768px */
-        top: 40%;
+        // top: 40%;
         left: auto;
         // padding: 260px 0 0 0;
     }
@@ -81,6 +97,27 @@
         margin-top: 6px;
         font-size: 2rem;
     }
+}
+
+.scroll-btn{
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-top: 50px;
+    color: #fff;
+}
+
+.scroll-btn__arrow{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg);
 }
 
 
@@ -148,7 +185,7 @@
     right: 0;
     background: url(../img/top-intro.jpg) no-repeat center center;
     width: 62%;
-    height: 655px;
+    height: 654px;
 
     @include tab-l{ /* < 1024px */
         top: 50px;
@@ -172,25 +209,25 @@
     top: 0;
     display: flex;
     justify-content: center;
-    padding: 100px 0;
+    padding: 160px 0 100px 0;
     width: 50%;
     min-width: 600px;
     background: rgba(255,255,255,0.9);
     z-index: 3;
 
     @include tab-l{ /* < 1024px */
-        padding: 80px 0;
+        padding: 150px 0 80px 0;
         width: 68%;
         max-width: 600px;
         min-width: auto;
     }
     @include tab-s{ /* < 768px */
-        padding: 70px 0;
+        padding: 130px 0 70px 0;
         max-width: 522px;
         width: 90%;
     }
     @include sp{ /* < 480px */
-        padding: 60px 0;
+        padding: 120px 0 60px 0;
     }
 }
 
@@ -210,8 +247,11 @@
     margin-top: 0;
 }
 
-.advantage__h3{
+.advantage__detail{
     margin-top: 30px;
+}
+
+.advantage__h3{
     font-weight: bold;
 
     @include tab-l{ /* < 1024px */
@@ -233,13 +273,17 @@
 }
 
 .advantage__btn{
+    // display: inline-block;
     margin-top: 50px;
+    width: 250px;
 
     @include tab-l{ /* < 1024px */
         margin-top: 40px;
     }
     @include tab-s{ /* < 768px */
         margin-top: 35px;
+        max-width: 250px;
+        width: auto;
     }
 }
 
@@ -278,10 +322,11 @@
         margin-top: 186px;
     }
     @include tab-s{ /* < 768px */
-        margin-top: 330px;
+        margin-top: 270px;
     }
-    // @include sp{ /* < 480px */
-    // }
+    @include sp{ /* < 480px */
+        margin-top: 340px;
+    }
 }
 
 
@@ -306,7 +351,7 @@
     margin-top: 80px;
 }
 
-.service-main__img{
+.js-motion{
     margin-right: 80px;
     width: 34%;
 
@@ -318,6 +363,19 @@
         width: 100%;
     }
 }
+
+// .service-main__img{
+//     margin-right: 80px;
+//     width: 34%;
+
+//     @include tab-l{ /* < 1024px */
+//         margin-right: 60px;
+//         // width: 330px;
+//     }
+//     @include tab-s{ /* < 768px */
+//         width: 100%;
+//     }
+// }
 
 .service-main__img-1{
     background: url(../img/service-main-1.jpg) no-repeat right center / cover;
@@ -346,6 +404,53 @@
         padding-top: 250px;
     }
 }
+
+
+// アニメーション 
+// 参考：https://oku-log.com/blog/scroll-effect/
+
+.motion-img{
+    // display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.motion-img:after {
+    content: '';
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(12, 12, 12);
+    transform: translate3d(-101%, 0, 0);
+  }
+  .js-motion.show .motion-img:after {
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  .js-motion.done .motion-img:after {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translate3d(103%, 0, 0);
+  }
+  .motion-img .service-main__img{
+    // display: inline-block;
+    opacity: 0;
+  }
+  .js-motion.done .motion-img .service-main__img{
+    opacity: 1;
+  }
+
+
+
+
 
 .service-main__detail{
     width: 49%;
@@ -480,11 +585,18 @@
 
 .service-sub__img{
     height: 260px;
+    overflow: hidden;
 }
 
 .service-sub__img > img{
     height: 100%;
     object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.service-sub__item:hover .service-sub__img > img{
+    transform: scale(1.1);
 }
 
 .service-sub__detail{
@@ -530,73 +642,18 @@
 .case{
 
 }
-.case__h2{
-    text-align: center;
-}
 
-.case__list{
-
-}
-
-.case__list__item{
-
-}
-
-.case__list__item > a{
-
-}
-
-.case__list__img{
-
-}
-
-.case__list__img > img{
-
-}
-
-.case__detail{
-
-}
-
-.case__h3{
-    margin-top: 25px;
-    font-size: 1.6rem;
-    line-height: 1;
-
-    @include tab-s{ /* < 768px */
-        margin-top: 15px;
-    }
-    // @include sp{ /* < 480px */
-    // }
-}
-
-.case__category__wrapper{
-    display: flex;
-    margin-top: 10px;
-}
-
-.case__category-1{
-    display: inline-block;
-    margin-right: 8px;
-    padding: 0 8px;
-    vertical-align: center;
-    font-size: 1.2rem;
-    background: $category;
-}
-
-.case__category-2{
-    font-size: 1.2rem;
-}
 
 .case__btn{
-    margin-top: 54px;
+    margin: 54px auto 0;
     text-align: center;
 
     @include tab-s{ /* < 768px */
+        width: 60%;
         margin-top: 45px;
     }
     @include sp{ /* < 480px */
-        // margin-top: 36px;
+        width: 100%;
     }
 }
 
@@ -706,13 +763,18 @@
 }
 
 .recruit__btn{
+    margin-left: auto;
+    margin-right: auto;
 
-}
-
-.recruit__btn > a{
+    // @include tab-s{ /* < 768px */
+    // }
     @include sp{ /* < 480px */
         width: 100%
     }
+}
+
+.recruit__btn > a{
+
 }
 
 
@@ -758,102 +820,6 @@
     // }
 }
 
-.news__list{
-    margin: 0;
-    width: 67%;
-
-    @include tab-l{ /* < 1024px */
-        margin-top: 60px;
-        width: 100%;
-    }
-    // @include tab-s{ /* < 768px */
-    // }
-    @include sp{ /* < 480px */
-        margin-top: 4.6rem;
-    }
-}
-
-.news__list__item{
-    padding: 24px 30px;/* ⭐️arrow入れるか検討 */
-    border-bottom: 1px solid #e3e3e3;
-
-    @include sp{ /* < 480px */
-        padding: 24px 20px;
-    }
-}
-
-.news__list__item:first-of-type{
-    border-top: 1px solid #e3e3e3;
-}
-
-.news__list__link{
-    display: flex;
-    justify-content: space-between;
-
-    @include tab-s{ /* < 768px */
-        display: block;
-        // width: 20%;
-        // min-width: auto;
-    }
-    // @include sp{ /* < 480px */
-    // }
-}
-
-.news__list__left{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 30px;
-    width: 30%;
-    min-width: 200px;
-
-    @include tab-s{ /* < 768px */
-        // display: block;
-        // width: 20%;
-        // min-width: auto;
-    }
-    @include sp{ /* < 480px */
-        min-width: 195px;
-    }
-}
-
-.news__list__left > time{
-    // line-height: 24px;
-}
-
-.news__category{
-    margin-top: 3px;
-    width: 120px;
-    height: 22px;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 22px;
-    background: $category-2;
-
-    @include tab-s{ /* < 768px */
-        margin-top: 0;
-    }
-    // @include sp{ /* < 480px */
-    // }
-}
-
-.news__list__right{
-    width: 64%;
-
-    @include tab-s{ /* < 768px */
-        width: 100%;
-    }
-    // @include sp{ /* < 480px */
-    // }
-}
-
-.news__list__text{
-    @include tab-s{ /* < 768px */
-        margin-top: 5px;
-    }
-    // @include sp{ /* < 480px */
-    // }
-}
-
 .news__btn{
     position: absolute;
     bottom: 0;
@@ -863,16 +829,21 @@
         position: relative;
         top: 0;
         text-align: center;
-        margin-top: 42px;
+        margin: 42px auto 0;
     }
-    // @include tab-s{ /* < 768px */
-    // }
-    // @include sp{ /* < 480px */
-    // }
+    @include tab-s{ /* < 768px */
+        width: 60%;
+    }
+    @include sp{ /* < 480px */
+        width: 100%;
+    }
 }
 
 .news__btn > a{
     @include tab-s{ /* < 768px */
         width: 60%;
+    }
+    @include sp{ /* < 480px */
+        width: 100%;
     }
 }
