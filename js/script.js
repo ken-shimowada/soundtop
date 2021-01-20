@@ -1,36 +1,36 @@
 
 // ヘッダー
+$(function () {
+  var nav_pos = $(".header-top").offset().top;
+  var nav_height = $(".header-top").outerHeight();
 
-var nav_pos = $(".header-top").offset().top;
-var nav_height = $(".header-top").outerHeight();
-$(window).scroll(function () {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > nav_pos) {
-        $(".header-top").addClass("fixed");
-        $("main").css("padding-top", nav_height);
+      $(".header-top").addClass("fixed");
+      $("main").css("padding-top", nav_height);
     } else {
-        $(".header-top").removeClass("fixed");
-        $("main").css("padding-top", 0);
+      $(".header-top").removeClass("fixed");
+      $("main").css("padding-top", 0);
     }
+  });
 });
-
-
 
 // バーガーボタン
 
 $('.burger-btn').on('click',function(){
 //.burger-btnをクリックすると
-    $('.burger-btn').toggleClass('close');
-    //.burger-btnにcloseクラスを付与(ボタンのアニメーション)
-    $('.drawer').toggleClass('open');
-    //.drawerにopenクラスを付与
+  $('.burger-btn').toggleClass('close');
+  //.burger-btnにcloseクラスを付与(ボタンのアニメーション)
+  $('.drawer').toggleClass('open');
+  //.drawerにopenクラスを付与
 });
 
 // sp全画面メニューのドロップダウンメニュー
 
 $('.opener').on('click',function(){
 //.openerをクリックすると
-    $('.drawer__sub__list').toggleClass('open');
-    //.burger-btnにcloseクラスを付与(ボタンのアニメーション)
+  $('.drawer__sub__list').toggleClass('open');
+  //.burger-btnにcloseクラスを付与(ボタンのアニメーション)
 });
 
 
@@ -38,10 +38,10 @@ $('.opener').on('click',function(){
 // pcヘッダーのドロップダウンメニュー
 
 // ⭐️ click → hoverにすると効かない
-$('.gnav__list__btn').on('click',function(){
-    //.openerをクリックすると
-    $('.gnav__sub__list').toggleClass('open');
-    //.burger-btnにcloseクラスを付与(ボタンのアニメーション)
+$('#sub-list').hover(function(){
+  //.openerをクリックすると
+  $('.gnav__sub__list').toggleClass('open');
+  //.gnav__sub__listにcloseクラスを付与(ボタンのアニメーション)
 });
   
 // ⭐️ 効かない
@@ -64,22 +64,20 @@ $('.gnav__list__btn').on('click',function(){
 // a[href^=#] を .mv a[href^=#] や #scrollにしても改善なし
 
 $(function(){
-    // #で始まるa要素をクリックした場合に処理
-    $('a[href^=#]').click(function(){
-        // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
-        var adjust = 0;
-        // スクロールの速度（ミリ秒）
-        var speed = 400;
-        // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
-        var href= $(this).attr("href");
-        // 移動先を取得 リンク先(href）のidがある要素を探して、targetに代入
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入
-        var position = target.offset().top + adjust;
-        // スムーススクロール linear（等速） or swing（変速）
-        $('body,html').animate({scrollTop:position}, speed, 'swing');
-        return false;
-    });
+  // #で始まるアンカーをクリックした場合に処理
+  $('a[href^=#]').click(function() {
+     // スクロールの速度
+     var speed = 400; // ミリ秒
+     // アンカーの値取得
+     var href= $(this).attr("href");
+     // 移動先を取得
+     var target = $(href == "#" || href == "" ? 'html' : href);
+     // 移動先を数値で取得
+     var position = target.offset().top;
+     // スムーススクロール
+     $('body,html').animate({scrollTop:position}, speed, 'swing');
+     return false;
+  });
 });
 
 
@@ -132,7 +130,6 @@ $(function(){
         viewFactor: '0.3'
     });
 
-    // スマホで表示されない
     ScrollReveal().reveal('.slide-in-bottom',{
         distance: '20px',
         origin: 'bottom',
@@ -142,9 +139,4 @@ $(function(){
         mobile: true
     });
 });
-
-    
-
-
-
 

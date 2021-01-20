@@ -417,11 +417,12 @@ h3 + * {
 
 /* 
 
-*** gnav
-*** gnav__list__btn
-*** burger-btn
-*** drawer
-*** drawer__sub__list
+****** gnav
+****** gnav__sub__list
+****** gnav__btns
+****** burger-btn
+****** drawer
+****** drawer__sub__list
 
 */
 /* 
@@ -752,6 +753,11 @@ header.fixed {
   justify-content: space-between;
 }
 
+.gnav__list__item {
+  position: relative;
+  padding: 23px 0;
+}
+
 .gnav__list__link {
   position: relative;
 }
@@ -764,7 +770,7 @@ header.fixed {
   left: 0;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
   height: 2px;
   width: 100%;
 }
@@ -773,26 +779,33 @@ header.fixed {
   transform: scaleX(1);
 }
 
-.gnav__list__btn {
-  position: relative;
+#sub-list {
+  transition: 0.2;
 }
 
 .gnav__sub__list {
-  display: none;
+  visibility: hidden;
+  opacity: 1;
   position: absolute;
-  top: 60px;
+  top: 75px;
   left: -30px;
   padding: 15px 0;
   width: 300px;
   background: #111;
+  transition: opacity 0.2, visibility 0.2;
 }
 
 .gnav__sub__list.open {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .gnav__sub__item {
   padding: 6px 30px;
+}
+
+.gnav__sub__link:hover {
+  opacity: 0.9;
 }
 
 .gnav__btns {
